@@ -54,7 +54,22 @@
             });
           });
         }
+        clear() {
+          const erasingName = document.querySelectorAll(".name");
+          erasingName.forEach((name) => {
+            name.remove();
+          });
+          const erasingDescription = document.querySelectorAll(".description");
+          erasingDescription.forEach((description) => {
+            description.remove();
+          });
+          const erasingImage = document.querySelectorAll(".image");
+          erasingImage.forEach((image) => {
+            image.remove();
+          });
+        }
         display(repoText) {
+          this.clear();
           const repoName = document.createElement("div");
           repoName.textContent = repoText["full_name"].split("/")[0];
           repoName.className = "name";
